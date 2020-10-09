@@ -2,10 +2,8 @@ class Person
 
   attr_accessor :name, :height, :birthday
 
-  def initialize (name:, height:, birthday:)
-    @name = name
-    @height = height
-    @birthday = birthday
+  def initialize (attributes)
+    attributes.each {|key, value| self.send(("#{key}="), value)}
   end
-
 end
+
